@@ -22,6 +22,7 @@ app.use("/", (req, res, next) => {
 });
 
 app.use("/api/user", router);
+const port = process.env.PORT || 4000;
 
 mongoose
   .connect(
@@ -33,7 +34,7 @@ mongoose
       sslValidate: false, // Disable server certificate validation (for demo purposes only)
     }
   )
-  .then(() => app.listen(4000))
+  .then(() => app.listen(`${port}`))
   .then(() => console.log("Database is connected and listening on port 4000"))
   .catch((err) =>
     console.log("there was error in connecting with Database : ", err)
