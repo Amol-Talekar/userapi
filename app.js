@@ -26,15 +26,9 @@ const port = process.env.PORT || 4000;
 
 mongoose
   .connect(
-    `mongodb+srv://amol11talekar:${process.env.MONGO_DB_PASSWORD}@cluster0.lt4actf.mongodb.net/LE?retryWrites=true&w=majority`,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      ssl: true, // Enable SSL/TLS
-      sslValidate: false, // Disable server certificate validation (for demo purposes only)
-    }
+    `mongodb+srv://amol11talekar:${process.env.MONGO_DB_PASSWORD}@cluster0.lt4actf.mongodb.net/LE?retryWrites=true&w=majority`
   )
-  .then(() => app.listen(`${port}`))
+  .then(() => app.listen(Number(`${port}`)))
   .then(() => console.log("Database is connected and listening on port 4000"))
   .catch((err) =>
     console.log("there was error in connecting with Database : ", err)
