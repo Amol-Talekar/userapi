@@ -4,7 +4,7 @@ APIs for User Signup, login, reset password and update user information using no
 #How to Install
 - Clone the project
 - Install dependencies
-- Execute Command "npm run" 
+- Execute Command "npm start" 
 
 #Output
 
